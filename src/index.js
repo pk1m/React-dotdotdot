@@ -12,6 +12,13 @@ function Dotdotdot() {
 }
 
 Dotdotdot.prototype = Object.create(React.Component.prototype);
+
+Dotdotdot.prototype.componentDidMount = function() {
+  if (this.props.clamp) {
+    this.dotdotdot(ReactDOM.findDOMNode(this.refs.container));
+  }
+};
+
 Dotdotdot.prototype.componentDidUpdate = function() {
   if (this.props.clamp) {
     this.dotdotdot(ReactDOM.findDOMNode(this.refs.container));
